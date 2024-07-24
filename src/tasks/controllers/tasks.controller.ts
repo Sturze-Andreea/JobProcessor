@@ -28,10 +28,7 @@ export class TaskController {
 
       res.json({ tasks: sortedTasks });
     } catch (e) {
-      throw new HttpException(
-        'Internal Server Error',
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
     }
   }
 
@@ -52,10 +49,7 @@ export class TaskController {
       res.set('Content-Type', 'text/plain');
       res.send(script);
     } catch (e) {
-      throw new HttpException(
-        'Internal Server Error',
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
     }
   }
 }
