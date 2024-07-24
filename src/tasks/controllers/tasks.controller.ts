@@ -6,9 +6,9 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { Task } from './interfaces/task.interface';
+import { Task } from '../interfaces/task.interface';
 import { Response } from 'express';
-import { TaskService } from './tasks.service';
+import { TaskService } from '../services/tasks.service';
 
 @Controller('tasks')
 export class TaskController {
